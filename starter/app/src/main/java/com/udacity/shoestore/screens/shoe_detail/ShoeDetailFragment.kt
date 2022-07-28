@@ -6,17 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.udacity.shoestore.AppViewModel
+import com.udacity.shoestore.shared_view_models.ShoeListViewModel
 import com.udacity.shoestore.R
-import timber.log.Timber
-import java.util.RandomAccess
 import kotlin.random.Random
 
 /**
  * A simple [Fragment] subclass.
  */
 class ShoeDetailFragment : Fragment() {
-    private val viewModel: AppViewModel by activityViewModels()
+    private val viewModel: ShoeListViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
