@@ -17,4 +17,7 @@ class UserViewModel: ViewModel() {
     fun login() {
         _user.value = User(name = "Dhuvam", password = "tata, see you")
     }
+    fun logOut() {
+        _user.value = null
+    }
 }

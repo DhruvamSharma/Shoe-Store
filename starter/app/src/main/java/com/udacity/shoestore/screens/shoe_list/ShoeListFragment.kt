@@ -1,18 +1,20 @@
 package com.udacity.shoestore.screens.shoe_list
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.shared_view_models.ShoeListViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
@@ -23,7 +25,7 @@ import com.udacity.shoestore.shared_view_models.UserViewModel
 /**
  * A simple [Fragment] subclass.
  */
-class ShoeListFragment : Fragment() {
+class ShoeListFragment : Fragment(), MenuProvider {
     // binding for current fragment
     private lateinit var binding: FragmentShoeListBinding
     // view model for shoe list
@@ -73,6 +75,23 @@ class ShoeListFragment : Fragment() {
             }
         }
 
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
+
         return binding.root
+    }
+
+    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+        menuInflater.inflate(R.menu.logout_menu, menu)
+    }
+
+    override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+       when (menuItem.itemId) {
+           R.id.loginFragment -> {
+               userViewModel.logOut()
+               return NavigationUI.onNavDestinationSelected(menuItem, navController)
+           }
+       }
+        return  super.onContextItemSelected(menuItem)
     }
 }

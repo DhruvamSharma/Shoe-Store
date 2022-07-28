@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/layout/fragment_shoe_detail.xml" value="0.36141304347826086" />
         <entry key="app/src/main/res/layout/fragment_shoe_list.xml" value="0.36141304347826086" />
         <entry key="app/src/main/res/layout/shoe_item.xml" value="0.2578125" />
+        <entry key="app/src/main/res/menu/logout_menu.xml" value="0.309375" />
       </map>
     </option>
   </component>
