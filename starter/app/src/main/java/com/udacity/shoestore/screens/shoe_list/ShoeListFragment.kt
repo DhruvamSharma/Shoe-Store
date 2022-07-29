@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
@@ -19,6 +18,7 @@ import com.udacity.shoestore.shared_view_models.ShoeListViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.screens.login.LoginFragment
+import com.udacity.shoestore.screens.onboard.OnboardFragment
 import com.udacity.shoestore.shared_view_models.UserViewModel
 
 
@@ -28,10 +28,13 @@ import com.udacity.shoestore.shared_view_models.UserViewModel
 class ShoeListFragment : Fragment(), MenuProvider {
     // binding for current fragment
     private lateinit var binding: FragmentShoeListBinding
+
     // view model for shoe list
     private val shoeListViewModel: ShoeListViewModel by activityViewModels()
+
     // view model for user
     private val userViewModel: UserViewModel by activityViewModels()
+
     // nav controller
     private lateinit var navController: NavController
     override fun onCreateView(
@@ -45,7 +48,7 @@ class ShoeListFragment : Fragment(), MenuProvider {
             navController.navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
 
-        userViewModel.user.observe(viewLifecycleOwner) {user ->
+        userViewModel.user.observe(viewLifecycleOwner) { user ->
             if (user == null) {
                 // move to login fragment
                 navController.navigate(R.id.loginFragment)
@@ -54,16 +57,21 @@ class ShoeListFragment : Fragment(), MenuProvider {
 
         val currentBackStackEntry = navController.currentBackStackEntry!!
         val savedStateHandle = currentBackStackEntry.savedStateHandle
+
         savedStateHandle.getLiveData<Boolean>(LoginFragment.LOGIN_SUCCESSFUL)
-            .observe(currentBackStackEntry, Observer { success ->
+            .observe(currentBackStackEntry) { success ->
                 if (!success) {
-                    val startDestination = navController.graph.startDestinationId
-                    val navOptions = NavOptions.Builder()
-                        .setPopUpTo(startDestination, true)
-                        .build()
-                    navController.navigate(startDestination, null, navOptions)
+                    activity?.finish()
                 }
-            })
+            }
+
+        savedStateHandle.getLiveData<Boolean>(OnboardFragment.ONBOARD_SUCCESSFUL)
+            .observe(currentBackStackEntry) { success ->
+                if (!success) {
+                    activity?.finish()
+                }
+            }
+
 
         shoeListViewModel.currentNumber.observe(viewLifecycleOwner) { shoeList ->
             shoeList.forEach { item ->
@@ -86,12 +94,12 @@ class ShoeListFragment : Fragment(), MenuProvider {
     }
 
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-       when (menuItem.itemId) {
-           R.id.loginFragment -> {
-               userViewModel.logOut()
-               return NavigationUI.onNavDestinationSelected(menuItem, navController)
-           }
-       }
-        return  super.onContextItemSelected(menuItem)
+        when (menuItem.itemId) {
+            R.id.loginFragment -> {
+                userViewModel.logOut()
+                return NavigationUI.onNavDestinationSelected(menuItem, navController)
+            }
+        }
+        return super.onContextItemSelected(menuItem)
     }
 }

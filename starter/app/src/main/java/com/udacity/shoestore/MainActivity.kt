@@ -20,10 +20,11 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         // helps in setting up back button
-        // and hiding back button on login fragment
+        // and hiding back button on login fragment and onboard fragment
         NavigationUI.setupActionBarWithNavController(this, navController, AppBarConfiguration(topLevelDestinationIds = setOf(
             R.id.shoeListFragment,
             R.id.loginFragment,
+            R.id.onboardFragment
         )))
     }
 

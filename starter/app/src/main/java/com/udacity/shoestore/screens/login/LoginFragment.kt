@@ -36,7 +36,7 @@ class LoginFragment : Fragment() {
         binding.loginButton.setOnClickListener {
             userViewModel.login()
             savedStateHandle[LOGIN_SUCCESSFUL] = true
-            findNavController().popBackStack()
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToOnboardFragment())
         }
         // Inflate the layout for this fragment
         return binding.root
