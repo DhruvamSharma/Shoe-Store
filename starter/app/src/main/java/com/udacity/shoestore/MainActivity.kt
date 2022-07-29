@@ -19,7 +19,12 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = (supportFragmentManager.findFragmentById(R.id.myNavHostFragment) as NavHostFragment)
         navController = navHostFragment.navController
 
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        // helps in setting up back button
+        // and hiding back button on login fragment
+        NavigationUI.setupActionBarWithNavController(this, navController, AppBarConfiguration(topLevelDestinationIds = setOf(
+            R.id.shoeListFragment,
+            R.id.loginFragment,
+        )))
     }
 
     override fun onSupportNavigateUp(): Boolean {
