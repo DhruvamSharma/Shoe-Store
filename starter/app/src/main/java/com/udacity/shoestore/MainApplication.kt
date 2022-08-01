@@ -1,6 +1,7 @@
 package com.udacity.shoestore
 
 import android.app.Application
+import com.google.android.material.color.DynamicColors
 import timber.log.Timber
 
 class MainApplication: Application() {

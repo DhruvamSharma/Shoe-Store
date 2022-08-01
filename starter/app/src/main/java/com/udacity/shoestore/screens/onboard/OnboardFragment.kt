@@ -32,7 +32,7 @@ class OnboardFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_onboard, container, false)
         binding.finishOnBoardButton.setOnClickListener {
             savedStateHandle[ONBOARD_SUCCESSFUL] = true
-            findNavController().navigate(OnboardFragmentDirections.actionOnboardFragmentToShoeListFragment())
+            findNavController().popBackStack()
         }
         return binding.root
     }
