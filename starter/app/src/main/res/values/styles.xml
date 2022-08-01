@@ -27,4 +27,13 @@
         <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
     </style>
+
+    <style name="Title" parent="AppTheme">
+        <item name="android:textSize">24sp</item>
+        <item name="android:spacing">2sp</item>
+    </style>
+    <style name="SubTitle" parent="AppTheme">
+        <item name="android:textSize">16sp</item>
+        <item name="android:spacing">1sp</item>
+    </style>
 </resources>
