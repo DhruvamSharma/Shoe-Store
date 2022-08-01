@@ -3,9 +3,11 @@ package com.udacity.shoestore.screens.shoe_list
 import android.os.Bundle
 import android.view.*
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
+import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -75,10 +77,11 @@ class ShoeListFragment : Fragment(), MenuProvider {
 
         shoeListViewModel.currentNumber.observe(viewLifecycleOwner) { shoeList ->
             shoeList.forEach { item ->
-                val layout = View.inflate(context, R.layout.shoe_item, null) as ConstraintLayout
-                val textView = layout.getViewById(R.id.shoeTitle) as TextView
-                textView.text = item.toString()
-                textView.layoutParams = binding.listView.layoutParams
+                val layout = View.inflate(context, R.layout.shoe_item, null) as CardView
+                val shoeItemLayout = layout[0] as ConstraintLayout
+                val titleTextView = shoeItemLayout.getViewById(R.id.shoeTitle) as TextView
+                titleTextView.text = item.name
+                layout.elevation = 5F
                 binding.listView.addView(layout)
             }
         }

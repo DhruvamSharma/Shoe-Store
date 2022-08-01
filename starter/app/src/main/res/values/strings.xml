@@ -10,4 +10,7 @@
     <string name="no_email_error">Please Enter Email</string>
     <string name="no_password_error">Please enter password</string>
     <string name="back_to_store">Back To Store</string>
+    <string name="welcome">Welcome</string>
+    <string name="onboardTitleText">A little history</string>
+    <string name="onboardSubTitleText">A little subtitle</string>
 </resources>

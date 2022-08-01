@@ -7,15 +7,54 @@
         android:layout_height="match_parent"
         tools:context=".screens.login.LoginFragment">
 
-        <Button
-            android:id="@+id/finishOnBoardButton"
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/login"
+            app:srcCompat="@drawable/brand_logo"
+            android:layout_margin="@dimen/layout_margin"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/onboardTitle"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/onboardTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:layout_margin="@dimen/layout_margin"
+            style="@style/Title"
+            android:text="@string/onboardTitleText"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/onboardSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:layout_margin="@dimen/layout_margin"
+            style="@style/SubTitle"
+            android:text="@string/onboardSubTitleText"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/onboardTitle"/>
+
+        <Button
+            android:id="@+id/finishOnBoardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome"
+            android:textAlignment="viewStart"
+            android:layout_margin="@dimen/layout_margin"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
