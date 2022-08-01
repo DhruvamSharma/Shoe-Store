@@ -27,4 +27,8 @@
         <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
     </style>
+
+    <style name="BorderlessButton" parent="AppTheme">
+
+    </style>
 </resources>
