@@ -10,14 +10,32 @@ class UserViewModel: ViewModel() {
     private val _user = MutableLiveData<User?>()
     val user: LiveData<User?> get() = _user
 
+    private val _loginState = MutableLiveData<LoginState>()
+    val loginState: LiveData<LoginState> get() = _loginState
+
     init {
         _user.value = null
+        _loginState.value = LoginState.EMPTY
     }
 
-    fun login() {
-        _user.value = User(name = "Dhuvam", password = "tata, see you")
+    fun login(email: String, password: String) {
+        if (email.isEmpty()) {
+            _loginState.value = LoginState.EMPTY_EMAIL
+        } else if (password.isEmpty()) {
+            _loginState.value = LoginState.EMPTY_PASSWORD
+        } else {
+            _loginState.value = LoginState.SUCCESS
+            _user.value = User(email = email, password = password)
+        }
     }
     fun logOut() {
         _user.value = null
     }
+}
+
+enum class LoginState {
+    EMPTY,
+    EMPTY_EMAIL,
+    EMPTY_PASSWORD,
+    SUCCESS,
 }
