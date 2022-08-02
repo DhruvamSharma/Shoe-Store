@@ -2,6 +2,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- This layout could use Linear layout, but for understanding and better positioning,
+     Constraint layout is used-->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/shoeListLayout"
         android:layout_width="match_parent"
@@ -10,12 +14,12 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/layout_margin">
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/listView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
                 android:orientation="vertical"/>
         </ScrollView>
 
