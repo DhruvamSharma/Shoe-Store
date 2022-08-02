@@ -9,107 +9,118 @@
             type="com.udacity.shoestore.shared_view_models.ShoeListViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- This layout could use Linear layout, but for understanding and better positioning,
+     Constraint layout is used. Scroll View is used so that if the user rotates teh screen, there is enough space for all data to be visible-->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".screens.shoe_detail.ShoeDetailFragment">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/shoeNameTextField"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/layout_margin"
-            android:hint="@string/enter_name"
-            app:endIconMode="clear_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            tools:context=".screens.shoe_detail.ShoeDetailFragment">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shoeNameTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.shoeName}"
-                android:textColorHint="#616161"
-                tools:ignore="TextContrastCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="@dimen/layout_margin"
+                android:hint="@string/enter_name"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/shoeCompanyTextField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/layout_margin"
-            app:endIconMode="clear_text"
-            android:hint="@string/enter_company"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoeNameTextField"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.shoeName}"
+                    android:textColorHint="#616161"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shoeCompanyTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="#616161"
-                tools:ignore="TextContrastCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="@dimen/layout_margin"
+                app:endIconMode="clear_text"
+                android:hint="@string/enter_company"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoeNameTextField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/shoeSizeTextField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/layout_margin"
-            android:hint="@string/enter_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoeCompanyTextField"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.shoeCompany}"
+                    android:textColorHint="#616161"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <AutoCompleteTextView
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shoeSizeTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="@dimen/layout_margin"
+                android:hint="@string/enter_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoeCompanyTextField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/shoeDescriptionTextField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/layout_margin"
-            android:hint="@string/enter_description"
-            app:endIconMode="clear_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoeSizeTextField"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#616161"
+                    android:inputType="number"
+                    android:text="@={viewModel.shoeSize}"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shoeDescriptionTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="#616161"
-                tools:ignore="TextContrastCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="@dimen/layout_margin"
+                android:hint="@string/enter_description"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoeSizeTextField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/layout_margin"
-            android:text="@string/save"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#616161"
+                    android:text="@={viewModel.shoeDescription}"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoeDescriptionTextField" />
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:text="@string/save"
+                android:onClick="@{() -> viewModel.saveNewShoe()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoeDescriptionTextField" />
 
-        <Button
-            android:id="@+id/cancelButton"
-            style="?borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/layout_margin"
-            android:text="@string/cancel"
+            <Button
+                android:id="@+id/cancelButton"
+                style="?borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin"
+                android:text="@string/cancel"
 
-            app:layout_constraintEnd_toStartOf="@id/saveButton"
-            app:layout_constraintTop_toTopOf="@id/saveButton"
-            app:layout_constraintBottom_toBottomOf="@id/saveButton"/>
+                app:layout_constraintEnd_toStartOf="@id/saveButton"
+                app:layout_constraintTop_toTopOf="@id/saveButton"
+                app:layout_constraintBottom_toBottomOf="@id/saveButton"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
