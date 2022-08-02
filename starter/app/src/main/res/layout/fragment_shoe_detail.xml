@@ -19,16 +19,27 @@
             android:layout_height="wrap_content"
             tools:context=".screens.shoe_detail.ShoeDetailFragment">
 
+            <TextView
+                android:id="@+id/shoeNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_name"
+                android:layout_margin="@dimen/layout_margin"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/shoeNameTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:hint="@string/enter_name"
+                android:layout_marginStart="@dimen/layout_margin"
+                android:layout_marginEnd="@dimen/layout_margin"
+
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoeNameLabel"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -39,16 +50,26 @@
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/shoeCompanyLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_company"
+                android:layout_margin="@dimen/layout_margin"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoeNameTextField"/>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/shoeCompanyTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
+                android:layout_marginStart="@dimen/layout_margin"
+                android:layout_marginEnd="@dimen/layout_margin"
                 app:endIconMode="clear_text"
-                android:hint="@string/enter_company"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/shoeNameTextField"
+                app:layout_constraintTop_toBottomOf="@id/shoeCompanyLabel"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -59,15 +80,25 @@
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/shoeSizeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_size"
+                android:layout_margin="@dimen/layout_margin"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoeCompanyTextField"/>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/shoeSizeTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:hint="@string/enter_size"
+                android:layout_marginStart="@dimen/layout_margin"
+                android:layout_marginEnd="@dimen/layout_margin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/shoeCompanyTextField"
+                app:layout_constraintTop_toBottomOf="@id/shoeSizeLabel"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -79,16 +110,26 @@
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/shoeDescriptionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_description"
+                android:layout_margin="@dimen/layout_margin"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoeSizeTextField"/>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/shoeDescriptionTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin"
-                android:hint="@string/enter_description"
+                android:layout_marginStart="@dimen/layout_margin"
+                android:layout_marginEnd="@dimen/layout_margin"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/shoeSizeTextField"
+                app:layout_constraintTop_toBottomOf="@id/shoeDescriptionLabel"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
