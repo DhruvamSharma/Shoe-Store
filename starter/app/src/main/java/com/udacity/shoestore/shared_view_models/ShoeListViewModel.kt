@@ -12,11 +12,19 @@ class ShoeListViewModel: ViewModel() {
     private val _currentNumber = MutableLiveData<MutableList<Shoe>>()
     val currentNumber: LiveData<MutableList<Shoe>> get() = _currentNumber
 
+    private val _currentShoe = MutableLiveData<Shoe>()
+    val currentShoe: LiveData<Shoe> get() = _currentShoe
+
+    private val _shoeName =  MutableLiveData<String>()
+    val shoeName: LiveData<String> get() = _shoeName
+
     init {
         _currentNumber.value = mutableListOf()
     }
 
-    fun setCurrentNumber(newShoe: Shoe) {
-        _currentNumber.value?.add(newShoe)
+    fun saveNewShoe() {
+        if (currentShoe.value != null) {
+            _currentNumber.value?.add(currentShoe.value!!)
+        }
     }
 }

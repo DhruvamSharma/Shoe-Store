@@ -15,4 +15,8 @@
     <string name="onboardSubTitleText">A little subtitle</string>
     <string name="cancel">CANCEL</string>
     <string name="save">SAVE</string>
+    <string name="enter_name">Enter Shoe Name</string>
+    <string name="enter_company">Enter Company</string>
+    <string name="enter_size">Shoe Size</string>
+    <string name="enter_description">Enter Description</string>
 </resources>

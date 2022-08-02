@@ -79,6 +79,7 @@ class ShoeListFragment : Fragment(), MenuProvider {
             shoeList.forEach { item ->
                 val layout = View.inflate(context, R.layout.shoe_item, null) as CardView
                 val shoeItemLayout = layout[0] as ConstraintLayout
+
                 val titleTextView = shoeItemLayout.getViewById(R.id.shoeTitle) as TextView
                 titleTextView.text = item.name
                 layout.elevation = 5F
