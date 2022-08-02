@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Shoe Park</string>
-    <string name="hello_blank_fragment">Empty blank or nil</string>
     <string name="add_shoe_item_cd">Add Shoe Item Button</string>
     <string name="login">Login</string>
     <string name="log_out">Log Out</string>
@@ -11,6 +10,20 @@
     <string name="no_password_error">Please enter password</string>
     <string name="back_to_store">Back To Store</string>
     <string name="welcome">Welcome</string>
+    <string name="start">Let\'s start</string>
     <string name="onboardTitleText">A little history</string>
-    <string name="onboardSubTitleText">A little subtitle</string>
+    <string name="onboardSubTitleText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+
+    <string name="instructionsTitleText">Small set of instructions</string>
+    <string name="instructionsSubTitleText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="cancel">CANCEL</string>
+    <string name="save">SAVE</string>
+    <string name="enter_name">Enter Shoe Name</string>
+    <string name="enter_company">Enter Company</string>
+    <string name="enter_size">Shoe Size</string>
+    <string name="enter_description">Enter Description</string>
+    <string name="empty_name">Please enter the shoe name</string>
+    <string name="empty_company_name">Please enter the shoe company name</string>
+    <string name="empty_size">Please enter the shoe size</string>
+    <string name="empty_description">Please enter the shoe description</string>
 </resources>

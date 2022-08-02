@@ -2,11 +2,15 @@ package com.udacity.shoestore
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.get
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import com.udacity.shoestore.shared_view_models.ShoeListViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +28,8 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, AppBarConfiguration(topLevelDestinationIds = setOf(
             R.id.shoeListFragment,
             R.id.loginFragment,
-            R.id.onboardFragment
+            R.id.onboardFragment,
+            R.id.instructionsFragment,
         )))
     }
 
