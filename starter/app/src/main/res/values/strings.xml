@@ -13,4 +13,6 @@
     <string name="welcome">Welcome</string>
     <string name="onboardTitleText">A little history</string>
     <string name="onboardSubTitleText">A little subtitle</string>
+    <string name="cancel">CANCEL</string>
+    <string name="save">SAVE</string>
 </resources>
